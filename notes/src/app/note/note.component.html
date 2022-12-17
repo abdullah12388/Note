@@ -1,0 +1,48 @@
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default" style="font-size: 25px;">
+            <i class="bi bi-sticky-fill" style="color: rgb(255, 153, 0);"></i>Note
+        </span>
+    </div>
+    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" #title
+        (keyup.enter)="createNote(title)">
+</div>
+
+<ul class="list-group" *ngFor="let p of posts">
+    <li class="list-group-item">
+        {{p.id}} - {{p.note}}
+        <button class="btn btn-warning" (click)="updateNote(p,title)">Update</button>
+        <button class="btn btn-danger" (click)="deleteNote(p)">Delete</button>
+    </li>
+</ul>
+
+
+<!-- <div class="col-12">
+    <div class="row" style="margin: 20px 0px;">
+        <div class="col-12-lg col-12-md col-6-lg">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default" style="font-size: 25px;">
+                        <i class="bi bi-sticky-fill" style="color: rgb(255, 153, 0);"></i>Note
+                    </span>
+                </div>
+                <input type="text" class="form-control" aria-label="Default"
+                    aria-describedby="inputGroup-sizing-default" [(ngModel)]="noteText"
+                    (keyup.enter)="onKeyUp(noteText)">
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngFor="let n of noteTextDisplay.slice().reverse()" style="margin: 20px 0px;">
+        <div class="col-12-lg col-12-md col-6-lg">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">{{n}}</p>
+                    <button class="card-link btn btn-warning"
+                            (click)="updateNote(n)">Update</button>
+                    <button class="card-link btn btn-danger"
+                            (click)="deleteNote(n)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
